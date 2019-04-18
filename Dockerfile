@@ -61,7 +61,7 @@ RUN set -x;\
 
 
 RUN set -x; \
-        && apt-get update \
+        apt-get update \
         && apt-get -y install -f --no-install-recommends 
 
 
