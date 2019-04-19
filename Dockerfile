@@ -71,7 +71,8 @@ RUN set -x; \
         libxslt1-dev \
         zlib1g-dev \
         libldap2-dev \
-        libsasl2-dev
+        libsasl2-dev \
+        && rm -rf /var/lib/apt/lists/*
 
 
 # Copy entrypoint script and Odoo configuration file
@@ -80,10 +81,6 @@ RUN pip3 install wheel num2words xlwt pysftp paramiko aliyun-python-sdk-core ali
 COPY ./requirements.txt /
 RUN pip3 install -r /requirements.txt
 
-# clean
-RUN set -x; \
-        apt-get -y remove build-essential python3-dev \
-        && rm -rf /var/lib/apt/lists/*
 
 # Expose Odoo services
 EXPOSE 8069 8071
