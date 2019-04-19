@@ -69,6 +69,11 @@ RUN set -x; \
 # Copy entrypoint script and Odoo configuration file
 RUN pip3 install num2words xlwt pysftp paramiko aliyun-python-sdk-core aliyun-python-sdk-iot
 
+RUN apt-get install -y --no-install-recommends python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
+RUN pip3 install wheel
+COPY ./requirements.txt /
+RUN pip3 install -r /requirements.txt
+
 # Expose Odoo services
 EXPOSE 8069 8071
 
