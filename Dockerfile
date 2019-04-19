@@ -71,6 +71,7 @@ RUN pip3 install num2words xlwt pysftp paramiko aliyun-python-sdk-core aliyun-py
 
 RUN apt-get install -y --no-install-recommends python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
 RUN pip3 install wheel
+RUN apt-get install libldap2-dev
 COPY ./requirements.txt /
 RUN pip3 install -r /requirements.txt
 
