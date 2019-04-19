@@ -82,7 +82,7 @@ RUN pip3 install -r /requirements.txt
 
 # clean
 RUN set -x; \
-        apt-get remove build-essential \
+        apt-get -y remove build-essential \
         && rm -rf /var/lib/apt/lists/*
 
 # Expose Odoo services
