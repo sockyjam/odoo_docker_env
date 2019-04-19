@@ -62,7 +62,7 @@ RUN set -x;\
 
 RUN set -x; \
         apt-get update \
-        && apt-get -y install -f --no-install-recommends 
+        && apt-get -y install -f --no-install-recommends
 
 
 
@@ -74,7 +74,7 @@ EXPOSE 8069 8071
 
 
 # Set default user when running the container
-USER odoo
+#USER odoo
 
 
 
