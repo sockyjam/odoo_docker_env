@@ -59,19 +59,24 @@ RUN set -x;\
     && rm -rf /var/lib/apt/lists/*
 
 
-
+# something need by build
 RUN set -x; \
         apt-get update \
-        && apt-get -y install -f --no-install-recommends
-
+        && apt-get -y install -f --no-install-recommends \
+        python3-dev \
+        build-essential \
+        libssl-dev \
+        libffi-dev \
+        libxml2-dev \
+        libxslt1-dev \
+        zlib1g-dev \
+        libldap2-dev \
+        libsasl2-dev
 
 
 # Copy entrypoint script and Odoo configuration file
-RUN pip3 install num2words xlwt pysftp paramiko aliyun-python-sdk-core aliyun-python-sdk-iot
+RUN pip3 install wheel num2words xlwt pysftp paramiko aliyun-python-sdk-core aliyun-python-sdk-iot
 
-RUN apt-get install -y --no-install-recommends python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
-RUN pip3 install wheel
-RUN apt-get install libldap2-dev libsasl2-dev
 COPY ./requirements.txt /
 RUN pip3 install -r /requirements.txt
 
