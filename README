@@ -4,3 +4,5 @@ sockyjam个人使用。
 基于niboo/odoo来编译的docker镜像。
 根据新纳入的app，更新pip install list。
 
+
+docker build . -t sockyjam/odoo_env
