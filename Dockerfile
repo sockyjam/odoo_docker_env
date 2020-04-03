@@ -54,6 +54,17 @@ RUN set -x; \
 RUN set -x; \
     npm install -g rtlcss
 
+RUN pip3 install pypdf2 \
+                 psycogreen \
+                 suds-jurko \
+                 passlib \
+                 babel \
+                 werkzeug \
+                 lxml \
+                 aliyun-python-sdk-core \
+                 aliyun-python-sdk-iot
+
+
 ENV ODOO_VERSION 13.0
 ARG ODOO_RELEASE=20200121
 
@@ -65,6 +76,6 @@ EXPOSE 8069 8071
 
 
 # Set default user when running the container
-USER odoo
+#USER odoo
 
 
