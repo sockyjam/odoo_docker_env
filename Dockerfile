@@ -54,15 +54,25 @@ RUN set -x; \
 RUN set -x; \
     npm install -g rtlcss
 
-RUN pip3 install pypdf2 \
-                 psycogreen \
-                 suds-jurko \
-                 passlib \
-                 babel \
-                 werkzeug \
-                 lxml \
+RUN apt-get update \
+    && apt-get install python3-psycopg2 \
+                python3-psutil
+
+
+RUN pip3 install setuptools wheel
+ADD requirements.txt /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt
+RUN npm install -g rtlcss
+
+RUN pip3 install \
+	         oauthlib \
+                 psycopg2-binary \
+                 Werkzeug==0.11.15 \
+                 reportlab \
                  aliyun-python-sdk-core \
                  aliyun-python-sdk-iot
+
+
 
 
 ENV ODOO_VERSION 13.0
