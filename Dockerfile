@@ -64,13 +64,18 @@ ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 RUN npm install -g rtlcss
 
+RUN apt install -y gcc python3-dev
+
 RUN pip3 install \
 	         oauthlib \
                  psycopg2-binary \
                  Werkzeug==0.11.15 \
                  reportlab \
                  aliyun-python-sdk-core \
-                 aliyun-python-sdk-iot
+                 aliyun-python-sdk-iot \
+                 oss2 \
+                 weixin-python==0.5.4 \
+                 alipay-sdk-python==3.3.398
 
 
 
