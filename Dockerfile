@@ -77,6 +77,7 @@ RUN pip3 install \
                  weixin-python==0.5.4 \
                  alipay-sdk-python==3.3.398
 
+# but alipay 2.0.1 is used by now...
 
 
 
