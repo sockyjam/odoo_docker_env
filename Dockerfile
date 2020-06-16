@@ -75,7 +75,10 @@ RUN pip3 install \
                  aliyun-python-sdk-iot \
                  oss2 \
                  weixin-python==0.5.4 \
-                 alipay-sdk-python==3.3.398
+                 alipay-sdk-python==3.3.398 \
+		 python-alipay-sdk==2.0.1 \
+		 redis
+
 
 # but alipay 2.0.1 is used by now...
 
